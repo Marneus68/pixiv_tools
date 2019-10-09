@@ -5,9 +5,9 @@ const pixiv_ = new PixivAppApi(process.env.NAME, process.env.PASSWORD)
 
 function followActions(follow, first) {
     follow.userPreviews.forEach((f) => { 
-        pixiv.userFollowAdd(f.user.id)
+        pixiv.userFollowAdd(f.user.id, { "userId": first.user.id })
             .then(() => console.log("Now following " + f.user.name + " on " + first.user.name))
-            .catch((e) => console.log("Unable to follow " + f.user.name + " on " + first.user.name))
+            .catch((e) => console.log("https://www.pixiv.net/member.php?id=" + f.user.id))
     });
     if (follow.nextUrl) {
         pixiv.fetch(follow.nextUrl)

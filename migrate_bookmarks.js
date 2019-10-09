@@ -5,7 +5,7 @@ const pixiv_ = new PixivAppApi(process.env.NAME, process.env.PASSWORD)
 
 function bookmarkAction(bookmarks, first) {
     bookmarks.illusts.forEach((f) => { 
-        pixiv.illustBookmarkAdd(f.id)
+        pixiv.illustBookmarkAdd(f.id, { "userId": first.user.id, "illustId": f.id })
             .then(() => console.log("Bookmarked " + f.title + " on " + first.user.name))
             .catch((e) => console.log("Bookmarked " + f.title + " on " + first.user.name))
     })
