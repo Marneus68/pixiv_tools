@@ -2,6 +2,6 @@
   "name": "pixiv_tools",
   "version": "0.1.0",
   "devDependencies": {
-    "pixiv-app-api": "^0.12.1"
+    "pixiv-app-api": "^1.0.1"
   }
 }
